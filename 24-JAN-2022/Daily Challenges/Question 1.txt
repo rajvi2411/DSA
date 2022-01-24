@@ -1,0 +1,31 @@
+//g++  7.4.0
+
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+   
+    int num;   //number of array elements
+    cin>>num;
+    int arr[num]; // declare an array of size num
+    
+    for(int i=0;i<num;i++)
+    {
+        cin>>arr[i];
+    }            // Taking input array
+    for(int i=0;i<num/2;i++)
+    {
+        int temp=arr[i];
+        arr[i]=arr[num-1-i];   //Swap first element with last till the middle element
+        arr[num-1-i]=temp;
+    }
+    for(int i=0;i<num;i++)
+    {
+        cout<<arr[i]<<" ";  //Print reversed array
+    }
+    
+ }
