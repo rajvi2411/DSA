@@ -1,0 +1,38 @@
+//g++  7.4.0
+
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n; //number of operations
+    int query_type,value;  // query type and its values to be added
+    stack<int> s,max_stack; //one to store values and other to maintain max element 
+    for(int i=0;i<n;i++)
+    {
+        cin>>query_type;
+        if(query_type==1)
+        {
+            cin>>value;
+            s.push(value);
+            if(value>=max_stack.top() || max_stack.empty()) max_stack.push(value);
+            break;
+        }
+        else if(query_type==2)
+        {  
+            if(s.top()==max_stack.top())
+            {
+                
+                max_stack.pop();
+            }
+            s.pop();
+            break;
+        }
+        else cout<<max_stack.top();
+    }
+    return 0;
+    
+}
